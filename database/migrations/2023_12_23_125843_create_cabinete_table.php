@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('cabinete', function (Blueprint $table) {
+            $table->id();
+            $table->boolean('is_lab_cab');
+            $table->integer('nr_pers');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('cabinete');
     }
 };

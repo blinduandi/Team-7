@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grupe', function (Blueprint $table) {
+        Schema::create('types', function (Blueprint $table) {
             $table->id();
-            $table->string('specialty');
-            $table->string('language');
-            $table->unsignedInteger('number_pers');
-            $table->unsignedBigInteger('subject_id');
+            $table->string('tip_pereche');
             $table->timestamps();
-
-            $table->foreign('subject_is')->references('id')->on('subjects');
         });
     }
 
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('grupe');
+        Schema::dropIfExists('types');
     }
 };
