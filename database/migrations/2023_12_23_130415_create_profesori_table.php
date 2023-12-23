@@ -53,6 +53,13 @@ return new class extends Migration
             $table->boolean('fri_class_5');
             $table->boolean('fri_class_6');
             $table->boolean('fri_class_7');
+            $table->boolean('sat_class_1');
+            $table->boolean('sat_class_2');
+            $table->boolean('sat_class_3');
+            $table->boolean('sat_class_4');
+            $table->boolean('sat_class_5');
+            $table->boolean('sat_class_6');
+            $table->boolean('sat_class_7');
             
             $table->timestamps();
         });
