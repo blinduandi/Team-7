@@ -6,8 +6,13 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@babel/preset-react": "^7.23.3",
         "axios": "^1.6.1",
         "laravel-vite-plugin": "^1.0.0",
         "vite": "^5.0.0"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     }
 }
