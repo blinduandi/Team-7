@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subiecte', function (Blueprint $table) {
+        Schema::create('subjects', function (Blueprint $table) {
             $table->id();
-            $table->string('unitate_curs');
-            $table->integer('teorie');
-            $table->integer('practica');
+            $table->string('course');
+            $table->integer('theory');
+            $table->integer('practice');
             $table->integer('lab');
             $table->string('total');
-            $table->integer('anul');
-            $table->integer('semestru');
+            $table->integer('year');
+            $table->integer('semester');
 
             $table->timestamps();
         });

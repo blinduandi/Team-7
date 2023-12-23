@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cabinete', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
+            $table->string('room_name');
             $table->boolean('is_lab_cab');
             $table->integer('nr_pers');
             $table->timestamps();

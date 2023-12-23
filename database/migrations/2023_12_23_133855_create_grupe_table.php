@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grupe', function (Blueprint $table) {
+        Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->string('specialitate');
-            $table->unsignedBigInteger('limba_id');
-            $table->foreign('limba_id')->references('id')->on('limbi')->onDelete('cascade');;
-            $table->integer('numar_pers');
-            $table->unsignedBigInteger('subiect_id');
-            $table->foreign('subiect_id')->references('id')->on('subiecte')->onDelete('cascade');;
+            $table->string('speciality');
+            $table->unsignedBigInteger('language_id');
+            $table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade');;
+            $table->integer('number_pers');
+            $table->unsignedBigInteger('subject_id');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');;
             $table->timestamps();
         });
     }
