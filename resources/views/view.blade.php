@@ -6,29 +6,48 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <link rel="stylesheet" href="css/app.css">
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Setup Promobot in your server"
     />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
 
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>SchedGen</title>
   </head>
-  <body>
+  <body style = "margin-top:0">
+    <header class = "mb-5" style="position:relative; top:0;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark"  >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"  style = "color:white;">SchedGen</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto d-flex justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin" style = "color:white;">
+                                                @auth('backpack')
+                        {{-- User is logged in --}}
+                        Welcome, {{ auth('backpack')->user()->name }}!<br> Access Admin Pannel! 
+                    @else
+                        {{-- User is not logged in --}}
+                        Please log in to access this content.
+                    @endauth
+
+
+
+
+                            </a>
+                        </li>
+                        <!-- Add more menu items as needed -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div>
