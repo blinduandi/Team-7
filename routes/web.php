@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SchedulleGenerator;
 use App\Http\Controllers\CreateCSV;
+use App\Http\Controllers\DownloadController;
 
 
 /*
@@ -20,10 +21,15 @@ Route::get('/', function () {
     return view('view');
 })->name('home');
 
-
+Route::get('/safdas', function () {
+    return view('table');
+})->name('table');
 
 
 Route::get('/generate', [SchedulleGenerator::class, 'generate']);
 Route::get('/save', [CreateCSV::class, 'saveDataToCSV']);
+
+Route::get('/download-pdf', [DownloadController::class, 'downloadPDF']);
+Route::get('/view-pdf', [DownloadController::class, 'viewPDF']);
 
 

@@ -49,7 +49,8 @@
         </nav>
     </header>
     <main>
-        
+          <div class="d-flex justify-content-center mb-5">  <h1>SCHEDULE</h1></div>
+        @yield('content')
         @php
         use App\Models\Group;
     use App\Models\Language;
@@ -77,13 +78,13 @@ if (file_exists($filePath)) {
         //print_r($jsonArray['365'][0]);
         
         echo '<table class="table">
-            <tr>
-                <th>Grupa</th>
-                <th>Luni</th>
-                <th>Marti</th>
-                <th>Mircuri</th>
-                <th>Joi</th>
-                <th>Vineri</th>
+            <tr style="font-size:30px;">
+                <th class = "p-3">Grupa</th>
+                <th class = "p-3">Luni</th>
+                <th class = "p-3">Marti</th>
+                <th class = "p-3">Miercuri</th>
+                <th class = "p-3">Joi</th>
+                <th class = "p-3">Vineri</th>
             </tr>';
        // $hours = ['8:00-9:30' , '9:45-11:15' , '11:30-13:30' , '13:30-15:00' , '15:15-16:45' , '17:00-18:30', '18:45-20:15'];
         
@@ -136,6 +137,8 @@ if (file_exists($filePath)) {
 }
 
         @endphp
+
+
         
     </main>
 			
